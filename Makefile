@@ -13,3 +13,7 @@ stop-dev:
 	docker-compose stop
 env-test:
 	docker-compose -f ./testenv/docker-compose.yaml up -d 
+deploy-qgm:
+	docker build --platform=linux/amd64 -t tangsengdaodaoserver .
+	docker tag tangsengdaodaoserver itimor2022/tangsengdaodaoserver:qgm1.1
+	docker push itimor2022/tangsengdaodaoserver:qgm1.1
